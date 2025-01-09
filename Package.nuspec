@@ -1,20 +1,24 @@
-<?xml version="1.0"?>
-<package >
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>Package</id>
+    <id>Paravel.DataAccess</id>
     <version>1.0.0</version>
-    <authors>marshall.penn</authors>
-    <owners>marshall.penn</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+	<title>Paravel.DataAccess</title>
+    <authors>Binraider</authors>
+    <owners>Binraider</owners>
+	<description>Simple Data access utility for Sql Server using patterns that i used to use a lot.</description>
+	<copyright>Copyright 2025 Binraider</copyright>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/binraider/Paravel.DataAccess</projectUrl>    
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Package description</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright 2025</copyright>
-    <tags>Tag1 Tag2</tags>
-    <dependencies>
-      <dependency id="SampleDependency" version="1.0" />
+    <repository type="git" commit="c3b50acb5b2e1e8d4d30a80cc081fd2b9a7a5046" />
+    <releaseNotes>Initial upload</releaseNotes>
+    
+    <tags>DataAccess SqlServer</tags>
+	<dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.Data.SqlClient" version="5.2.2" />
+      </group>
     </dependencies>
   </metadata>
 </package>
