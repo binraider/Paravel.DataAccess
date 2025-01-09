@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -95,35 +96,24 @@ public interface IDataAccess
 public class DataAccess : IDataAccess
 {
 
-    //private bool disposed = false;
-    //private SqlConnection conn = null;
+    private IConfiguration configuration;
+
     private string connectionstring = "";
     private int commandtimeout = 0;
 
-    public DataAccess(string m_connectionstring)
+    public DataAccess(IConfiguration config)
     {
-        if (!string.IsNullOrEmpty(m_connectionstring))
+        configuration = config;
+        var section = configuration.GetSection("ParavelDataAccess");
+        connectionstring = "" + section["ConnectionString"];
+        var timourString = "" + section["CommandTimeout"];
+        if(int.TryParse(timourString, out var timeouttemp))
         {
-            connectionstring = m_connectionstring;
+            commandtimeout = timeouttemp;
         }
     }
 
-    public DataAccess(string m_connectionstring, int m_commandtimeout)
-    {
-        try
-        {
-            commandtimeout = m_commandtimeout;
-            connectionstring = m_connectionstring;
-        }
-        catch (SqlException ex)
-        {
 
-        }
-        catch (Exception ex)
-        {
-
-        }
-    }
 
 
     #region Async Void Methods
