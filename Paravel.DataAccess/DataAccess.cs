@@ -190,7 +190,7 @@ public class DataAccess : IDataAccess
         {
             outcome.Success = false;
             outcome.Message = "A query Failed. Please see logs for exact error";
-            outcome.Techmessage = "GetDataTable error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
+            outcome.Techmessage = "ExecSqlAsyncMethods error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
         }
         outcome.Intvar = result;
 
@@ -282,7 +282,7 @@ public class DataAccess : IDataAccess
         {
             outcome.Success = false;
             outcome.Message = "A query Failed. Please see logs for exact error";
-            outcome.Techmessage = "GetDataTable error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
+            outcome.Techmessage = "ExecSqlAsyncMethods error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
         }
         if (isCancelled)
         {
@@ -370,7 +370,7 @@ public class DataAccess : IDataAccess
         {
             outcome.Success = false;
             outcome.Message = "A query Failed. Please see logs for exact error";
-            outcome.Techmessage = "GetDataTable error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
+            outcome.Techmessage = "AsyncDataTableMethods error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
         }
         else
         {
@@ -382,7 +382,7 @@ public class DataAccess : IDataAccess
             {
                 outcome.Success = false;
                 outcome.Message = "A query Failed. Please see logs for exact error";
-                outcome.Techmessage = "GetDataTable error. Datatable is null";
+                outcome.Techmessage = "AsyncDataTableMethods error. Datatable is null";
             }
         }
 
@@ -550,7 +550,7 @@ public class DataAccess : IDataAccess
         {
             outcome.Success = false;
             outcome.Message = "A query Failed. Please see logs for exact error";
-            outcome.Techmessage = "GetDataTable error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
+            outcome.Techmessage = "GetScalarAsyncMethods error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
         }
 
         return outcome;
@@ -633,7 +633,7 @@ public class DataAccess : IDataAccess
         {
             outcome.Success = false;
             outcome.Message = "A query Failed. Please see logs for exact error";
-            outcome.Techmessage = "GetDataTable error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
+            outcome.Techmessage = "GetScalarAsyncMethods error. Query is[" + strQuery + "] Error:[" + errormsg + "]";
         }
         if (isCancelled)
         {
@@ -789,7 +789,7 @@ public class DataAccess : IDataAccess
         }
         catch (Exception ex)
         {
-            outcome.SetFailureMessage("An update query Failed. Please see logs for exact error", "ExecSql error. Query is[" + strQuery + "] Error:[" + ex.Message + "]");
+            outcome.SetFailureMessage("An update query Failed. Please see logs for exact error", "ExecSqlProcVoidMethods error. Query is[" + strQuery + "] Error:[" + ex.Message + "]");
             results = -1;
         }
         outcome.Intvar = results;
